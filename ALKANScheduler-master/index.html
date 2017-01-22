@@ -29,7 +29,7 @@
                 <div class="tab" id="manage_schedule_tab">
                     <div class="tab-icon">
                         <span class="helper"></span>
-                        <img src="img/manage-sched.png" alt="Manage Sched" width="32" height="32"/>
+                        <img src="img/manage-sched.png" alt="Manage Sched" width="32" height="32" />
                     </div>
                     <div class="tab-title">
                         Manage Schedule
@@ -38,9 +38,9 @@
                     <div class="tab-content hidden" id="add_courses_content">
                         Add Courses
                         <br />
-                        <input type="text" placeholder="Course Name" id="course"/>
+                        <input type="text" placeholder="Course Name" id="course" />
                         <br />
-                        <input type="text" placeholder="Section" id="section"/>
+                        <input type="text" placeholder="Section" id="section" />
                         <button class="day">M</button>
                         <button class="day">T</button>
                         <button class="day">W</button>
@@ -92,17 +92,28 @@
                             <option value=":45">45</option>
                         </select>
                         <br />
-                        Course Background Color &nbsp;&nbsp;&nbsp;<input class="color {pickerPosition:'left'}" type="text" id="schedBgColor"/>
-                        <input type="text" placeholder="Room" id="room" />
+                        Course Background Color &nbsp;&nbsp;&nbsp;<input class="color {pickerPosition:'left'}" type="text" id="schedBgColor" />
                         <button id="add_button">ADD</button>
-                        Course List
-                        <ul id="course_list"></ul>
-                    </div>
-                    <div class="clearfix"></div>
+                        <br />
+                        <div style="float:left">Course List</div> <div><button id="clear_button" style="float:right">Clear Selected</button></div>
+                        <br />
+                        <ul id="course_list">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
                     </div>
                     <div class="clearfix"></div>
                 </div>
-                <br class="clearfix"/>
+                <div class="clearfix"></div>
+                <br class="clearfix" />
             </section>
             <section id="sched">
                 <span class="helper"></span>

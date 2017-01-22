@@ -7,6 +7,7 @@
         canvas = document.getElementById('canvas'),
         download_button = document.getElementById('download_button'),
         add_button = document.getElementById('add_button'),
+        clear_button = document.getElementById('clear_button'),
         days = document.querySelectorAll('.day'),
         plus = document.querySelectorAll('.tab-toggler'),
         headerHeight = document.getElementsByTagName('header')[0].clientHeight,
@@ -58,6 +59,9 @@
     }
 
     download_button.onclick = scheda.downloadSchedule;
+
+    
+    /*
     add_button.onclick = function(){
         var courseCode = document.getElementById('course'),
             sectionName = document.getElementById('section'),
@@ -96,6 +100,7 @@
         document.getElementById('course_list').innerHTML += "<li>" + string + "<button class='x_button' onclick='scheda.remove(\"" + id + "\");this.parentNode.parentNode.removeChild(this.parentNode);'>X</button></li>";
         room.value = sectionName.value = courseCode.value = "";
     }
+    */
     
     root.updateConfig = function (e, p) {
         var obj = {};
@@ -118,6 +123,45 @@
         document.getElementById('timeColor').color.fromString(scheda.getConfig('time.color').substring(1));
         document.getElementById('dayColor').color.fromString(scheda.getConfig('day.color').substring(1));
         document.getElementById('schedColor').color.fromString(scheda.getConfig('sched.color').substring(1));
+    };
+
+    /*  modifications */
+    var courses = [ "AER210H1F", "AER301H1F", "AER307H1F", "AER315H1F","AER407H1F", "AER501H1F", "AER506H1F", "AER507H1F", "AER525H1F",
+                    "APM384H1F",
+                    "APS100H1F", "APS111H1F", "APS113Y1Y", "APS234H1F",
+                    "BME344H1F", "CHE112H1F"];
+
+    var selectedCourses = new Array();
+
+    add_button.onclick = function () {
+        var courseCode = document.getElementById('course').value;
+        if (selectedCourses.length == 10) {
+            alert("10 courses are already selected");
+            return;
+        }
+
+        if (isInArray(courses, courseCode)) {
+            if (isInArray(selectedCourses, courseCode)) {
+                alert("Course " + courseCode + " is already selected");
+                return;
+            }            
+            document.getElementById("course_list").children[selectedCourses.length].innerHTML = courseCode;
+            selectedCourses.push(courseCode);
+        }
+        else {
+            alert("Unknown course code " + courseCode);
+        }
+    };
+    clear_button.onclick = function () {
+        var coursesList = document.getElementById('course_list');
+        for(i=0; i< selectedCourses.length;i++){
+            coursesList.children[i].innerHTML = "";
+        }
+        selectedCourses.length = 0;        
+    };
+
+    function isInArray(array, search) {
+        return array.indexOf(search) >= 0;
     };
 
 }(this));
