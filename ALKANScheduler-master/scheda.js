@@ -171,6 +171,50 @@
         return id;
     };
 
+    scheda.drawCourse2 = function (day, time, courseCode, sectionName, room, color) {
+        var y,
+            sp,
+            id,
+            randomColor = function () {
+                var rn = function () {
+                    return parseInt(Math.random() * 255, 10);
+                };
+                return "rgb(" + rn() + ", " + rn() + ", " + rn() + ")";
+            },
+            draw = function (xx) {
+                var x = (xx * w) + conf.timeColumnWidth;
+                c.beginPath();
+                gTop(x, time[0], h, w, c);
+                gBottom(x, time[1] + time[0], h, w, c);
+                c.strokeStyle = c.fillStyle = color;
+                c.fill();
+                c.lineWidth = 0.5;
+                c.fillStyle = conf.sched.color;
+                c.font = conf.sched.style + " " + conf.sched.size + "px " + conf.sched.font;
+                if (room === "") {
+                    c.fillText(courseCode, tC(w, c, courseCode) + x, y + (sp / 2) - 2);
+                } else {
+                    c.fillText(courseCode, tC(w, c, courseCode) + x, y + (sp / 2) - 2);
+                    c.fillText(room, tC(w, c, room) + x, y + (sp / 2) + 10);
+                }
+                c.stroke();
+            };
+
+        save && history.push({ id: (id = uuid()), args: arguments });
+        var start = (time[0] - 7) * 4;
+        var duration = (time[1] - time[0]) * 4;
+        time = [start, duration];
+        y = (time[0] / 4) * h + h;
+        sp = (time[1] / 4) * h;
+        room = room || "";
+        courseCode = courseCode + "\n" + (sectionName || "");
+        !color && (color = randomColor());
+        draw(day-1);
+
+        return id;
+    };
+
+
     scheda.setConfig = function (config) {
         var i,
             j;
