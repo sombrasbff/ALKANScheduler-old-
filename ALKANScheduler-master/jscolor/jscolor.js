@@ -1,12 +1,12 @@
 /**
  * jscolor, JavaScript Color Picker
  *
- * @version 1.4.2
- * @license GNU Lesser General Public License, http://www.gnu.org/copyleft/lesser.html
- * @author  Jan Odvarko, http://odvarko.cz
- * @created 2008-06-15
- * @updated 2013-11-25
- * @link    http://jscolor.com
+ * version 2.0.4
+ * license GNU Lesser General Public License, http://www.gnu.org/copyleft/lesser.html
+ * author  East Desire, http://odvarko.cz
+ * created 2008-06-15
+ * updated 2013-11-25
+ * link    http://jscolor.com
  */
 
 

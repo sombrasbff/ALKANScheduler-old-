@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>scheda.js</title>
+		<link rel="shortcut icon" href="favicon.png" />
+        <link rel="image_src" href="img/logo.png" />
+		<link rel="stylesheet" href="css/style.css" />
+		<meta name="description" content="Create your dream sched with a style." />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta property="og:title" content="scheda. Style UP."/>
+		<meta property="og:url" content="http://ravenjohn.github.io/scheda.js/"/>
+		<meta property="og:site_name" content="scheda"/>
+	</head>
+	<body>
+        <header>
+            <span class="helper"></span>
+            <img src="img/alkanlogo.png" alt="alkanlogo" width="385" height="85"/>
+        </header>
+        </header>
+        <section id="app">
+            <section id="tabs">
+                <div class="tab">
+                    <div class="tab-icon">
+                        <span class="helper"></span>
+                    </div>
+                    <div class="tab-title">Home</div>
+                    <br class="clearfix" />
+                </div>
+                <div class="tab" id="manage_schedule_tab">
+                    <div class="tab-icon">
+                        <span class="helper"></span>
+                        <img src="img/manage-sched.png" alt="Manage Sched" width="32" height="32" />
+                    </div>
+                    <div class="tab-title">
+                        Manage Schedule
+                        <div class="tab-toggler" target="add_courses_content">+</div>
+                    </div>
+                    <div class="tab-content hidden" id="add_courses_content">
+                        Add Courses
+                        <br />
+                        <input type="text" placeholder="Course Name" id="course" />
+                        <br />
+                        <input type="text" placeholder="Section" id="section" />
+                        <button class="day">M</button>
+                        <button class="day">T</button>
+                        <button class="day">W</button>
+                        <button class="day">Th</button>
+                        <button class="day">F</button>
+                        <button class="day">S</button>
+                        <br />
+                        from
+                        <select id="from">
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                        </select>
+                        <select id="from2">
+                            <option value=":00">00</option>
+                            <option value=":15">15</option>
+                            <option value=":30">30</option>
+                            <option value=":45">45</option>
+                        </select>
+                        to
+                        <select id="to">
+                            <option value="7">7</option>
+                            <option value="8" selected="selected">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                        </select>
+                        <select id="to2">
+                            <option value=":00">00</option>
+                            <option value=":15">15</option>
+                            <option value=":30">30</option>
+                            <option value=":45">45</option>
+                        </select>
+                        <br />
+                        Course Background Color &nbsp;&nbsp;&nbsp;<input class="color {pickerPosition:'left'}" type="text" id="schedBgColor" />
+                        <button id="add_button">ADD</button>
+                        <br />
+                        <div style="float:left">Course List</div> <div><button id="clear_button" style="float:right">Clear Selected</button></div>
+                        <br />
+                        <ul id="course_list">
+                            <li></li>
+                            
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="clearfix"></div>
+                <br class="clearfix" />
+            </section>
+            <section id="sched">
+                <span class="helper"></span>
+                <canvas id="canvas"></canvas>
+                <br />
+
+                <button id="schedule_button">Generate Schedule</button>
+                <button id="download_button">Download</button>
+            </section>
+        </section>
+        <section id="howto">
+            <br />
+            <div class="code">
+                <pre>
+                </pre>
+            </div>
+        </section>
+        <footer>
+            <table>
+            </table>
+            <h5>COMMENTS AND SUGGESTIONS? </h5>
+            <h5>Jscolor </h5>
+            <h5> JavaScript Color Picker,
+            version: 2.0.4
+            license: GNU Lesser General Public License, http://www.gnu.org/copyleft/lesser.html
+            author:  East Desire, http://odvarko.cz
+            created: 2008-06-15
+            link:    http://jscolor.com </h5>
+            <br class="clearfix"/>
+            <div class="fb-comments" data-href="http://ravenjohn.github.io/scheda.js/" data-numposts="10" data-colorscheme="dark" style="margin: 0 auto;"></div>
+            <br class="clearfix"/>
+        </footer>
+        <script type="text/javascript" src="scheda.js"></script>
+        <script type="text/javascript" src="jscolor/jscolor.js"></script>
+        <script type="text/javascript" src="js/script.js"></script>
+	</body>
+</html>

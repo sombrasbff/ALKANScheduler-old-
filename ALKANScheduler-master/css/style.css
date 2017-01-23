@@ -1,3 +1,4 @@
+
 @font-face {
 	font-family: Casper;
 	src: url("../font/Casper/Casper.ttf")  format("truetype");
@@ -141,16 +142,17 @@ button{
     background: linear-gradient(to bottom,  #262626 0%,#4a4a4a 99%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#262626', endColorstr='#4a4a4a',GradientType=0 ); /* IE6-9 */
 }
-#add_button{
+#add_button, #clear_button, #schedule_button{
     height: 31px;
     background: #3A6235;
     border: 0;
     padding: 0 20px;
 }
-#add_button:hover, #download_button:hover{
+#add_button:hover, #download_button, #clear_button, #schedule_button:hover{
     background: #6BBB62;
     color: #FFF;
 }
+
 #room{
     margin: 0;
 }
@@ -207,8 +209,8 @@ h5{
 #font_colors_icon{
     color: #6BBB62;
 }
-#download_button{
-    margin-top: 20px;
+#download_button, #schedule_button{
+    margin-top: 10px;
     height: 31px;
     background: #3A6235;
     border: 0;
@@ -243,7 +245,7 @@ select{
     height: 0px;    
 }
 .tab:first-child{
-    margin-top: 20px;
+    margin-top: 10px;
 }
 .tab{
     border-left: 10px solid #1D1D1D;
